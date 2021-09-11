@@ -1,3 +1,7 @@
+// Nguyễn Văn Nhẫn
+// B1809272
+// Nhóm: 04
+
 import java.net.*;
 import java.io.*;
 
@@ -12,14 +16,14 @@ public class Lab1Exc1Client {
 			OutputStream os = socket.getOutputStream();
 			while (true) {
 				System.out.print("Nhap 1 ky tu so: ");
-				int ch = System.in.read();
-				os.write(ch);
+				int sentence_to_server = System.in.read();
+				os.write(sentence_to_server);
 				System.in.skip(2);
-				if (ch == '@')
+				if (sentence_to_server == '@')
 					break;
-				byte b[] = new byte[1000];
-				int ch1 = is.read(b);
-				System.out.println("From server: " + new String(b));
+				byte sentence_from_server[] = new byte[1000];
+				is.read(sentence_from_server);
+				System.out.println("From server: " + new String(sentence_from_server));
 			}
 			socket.close();
 

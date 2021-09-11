@@ -1,3 +1,7 @@
+
+// Nguyễn Văn Nhẫn
+// B1809272
+// Nhóm: 04
 import java.io.*;
 import java.net.*;
 
@@ -7,49 +11,48 @@ public class Lab1Exc1Server {
         try (ServerSocket server = new ServerSocket(PORT)) {
             while (true) {
                 try (Socket connection = server.accept()) {
-                    System.out.println("Co 1 Client " + connection.getInetAddress() + " cong " + connection.getPort()
-                            + " noi ket");
-                    InputStream is = connection.getInputStream();
-                    OutputStream os = connection.getOutputStream();
+                    System.out.println("Connection from " + connection + "!");
+                    InputStream inFromClient = connection.getInputStream();
+                    OutputStream outToClient = connection.getOutputStream();
                     while (true) {
-                        int ch = is.read();
-                        if (ch == '@')
+                        int sentence_from_client = inFromClient.read();
+                        if (sentence_from_client == '@')
                             break;
-                        String rs = "Khong biet";
-                        switch (ch) {
+                        String sentence_to_client = "Khong biet";
+                        switch (sentence_from_client) {
                             case '0':
-                                rs = "Khong";
+                                sentence_to_client = "Khong";
                                 break;
                             case '1':
-                                rs = "Mot";
+                                sentence_to_client = "Mot";
                                 break;
                             case '2':
-                                rs = "Hai";
+                                sentence_to_client = "Hai";
                                 break;
                             case '3':
-                                rs = "Ba";
+                                sentence_to_client = "Ba";
                                 break;
                             case '4':
-                                rs = "Bon";
+                                sentence_to_client = "Bon";
                                 break;
                             case '5':
-                                rs = "Nam";
+                                sentence_to_client = "Nam";
                                 break;
                             case '6':
-                                rs = "Sau";
+                                sentence_to_client = "Sau";
                                 break;
                             case '7':
-                                rs = "Bay";
+                                sentence_to_client = "Bay";
                                 break;
                             case '8':
-                                rs = "Tam";
+                                sentence_to_client = "Tam";
                                 break;
                             case '9':
-                                rs = "Chin";
+                                sentence_to_client = "Chin";
                                 break;
 
                         }
-                        os.write(rs.getBytes());
+                        outToClient.write(sentence_to_client.getBytes());
                     }
                     connection.close();
                 } catch (IOException e) {
