@@ -57,6 +57,7 @@
 **Bài 1 :**  Viết chương trình nhận đối số là một URL dạng Web. Nối kết đến Web Server trong URL để lấy trang web về và hiển thị nội dung file HTML đó ra màn hình.
 
 **Bài 2 :**  Viết chương trình gửi 1 email (nội dung bất kỳ) đến 1 địa chỉ mail khi biết địa chỉ của 1 SMTP Server.
+
 Có thể thử SMTP Server: smtp.saix.net (địa chỉ nhận contact@saix.net)
 **Bài 3:** Viết chương trình UDP Server định kỳ 30s gửi 1 file cho trước đến 1 địa chỉ lớp D.
 Xây dựng Client sử dụng Multicast Socket gia nhập vào nhóm địa chỉ đó để nhận file.
