@@ -35,7 +35,6 @@ class ClientHandle extends Thread {
             } else {
                 outToClient.writeBytes(Integer.toString(n) + "\n");
             }
-            outToClient.writeBytes("5\n");
             this.s.close();
         } catch (IOException e) {
             System.err.println(e);

@@ -1,3 +1,7 @@
+// Nguyen Van Nhan
+// B1809272
+// Nhom 04
+
 import java.io.*;
 import java.net.*;
 
@@ -29,6 +33,7 @@ public class Lab2Exc1Server {
     public static void main(String[] args) {
         final int PORT = 1025;
         try (ServerSocket server = new ServerSocket(PORT)) {
+            System.out.println("Listening for connections on port " + PORT);
             while (true) {
                 Socket connection = server.accept();
                 ClientHandle client = new ClientHandle(connection);
