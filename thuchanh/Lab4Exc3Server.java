@@ -9,7 +9,7 @@ public class Lab4Exc3Server{
         try{
             DatagramSocket socket = new DatagramSocket();
             Scanner sc = new Scanner(System.in);
-            System.out.print("Nhap ten file: "); 
+            System.out.print("Nhap chuoi: ");
             String filename = sc.nextLine();
             while(true){
              InetAddress address = InetAddress.getByName("230.0.0.1");
